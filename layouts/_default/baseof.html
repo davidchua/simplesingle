@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    {{- partial "head.html" . -}}
+    <body>
+        {{- partial "header.html" . -}}
+        <div id="doc" class="markdown-body container-fluid">
+        {{- block "main" . }}{{- end }}
+        </div>
+
+        {{- if eq .Site.Params.toc "enabled" }}
+          {{- block "toc" . }}{{- end }}
+        {{- end }}
+
+        {{- partial "footer.html" . -}}
+    </body>
+</html>

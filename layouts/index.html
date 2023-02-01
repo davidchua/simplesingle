@@ -1,0 +1,27 @@
+{{ define "main" }}
+<h1>{{ .Title | default .Site.Title }}</h1>
+  {{ .Content }}
+
+{{ range.Pages }}
+  {{ .Render "summary" }}
+{{ end }}
+
+{{ end }}
+
+{{ define "toc" }}
+
+<div id="ui-toc-affix" class="hidden-sm hidden-xs ui-affix-toc ui-toc-dropdown
+  unselectable hidden-print affix" data-spy="affix" style="top: 17px; left: 85%;"><div class="toc"><ul class="nav">
+      <li class="active"><a href="#doc" title="{{ .Site.Title }}">{{ .Site.Title }}</a><ul class="nav">
+{{ range.Pages }}
+<li class=""><a href="#{{ anchorize .Title }}" title="{{ .Title }}">{{
+    .Params.emoji }} {{ .Title }}</a></li>
+{{ end }}
+</ul>
+</div>
+<div class="toc-menu">
+  <a
+    class="back-to-top" href="#">Back to top</a><a class="go-to-bottom"
+    href="#footer">Go to bottom</a></div>
+</div>
+{{ end }}

@@ -1,0 +1,7 @@
+<div class="mb-2">
+  {{ if .Params.image }}
+  <img alt="{{ .Title }}" src="{{ .Params.image }}" />
+  {{ end}}
+  <h2 class="title-summary" id="{{ anchorize .Title }}">{{ .Params.emoji }} {{ .Title }}</h2>
+  {{ .Content }}
+</div>
