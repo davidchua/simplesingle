@@ -35,6 +35,30 @@ theme = "simplesingle"
 
 `homepage_meta_tags` is optional and is meant to help you add og tags into your published site. You can choose not to have these filled up.
 
+## How does it work?
+
+SimpleSingle follows a single directory layout and takes in all your content pages and adds them one by one into a single page html page.
+
+To ensure order, you will need to ensure that you set a `weight` in your page params.
+
+eg.
+
+```
+# index.md
+---
+title: "Title"
+...
+weight: 1
+---
+<CONTENT>
+```
+
+The lower the weight, the higher it appears in the order.
+
+This theme subtlely ignores directory structures, so you can keep your content in subdirectories as long as the weight is properly set.
+
+You can view a example hugo site at our demo page: [https://github.com/davidchua/simplesingle-demo](https://github.com/davidchua/simplesingle-demo)
+
 ## Demo
 
-A demo site can be found at [https://peeaao.com](https://peeaao.com)
+A demo site can be found at [https://peeaao.com](https://peeaao.com) 
